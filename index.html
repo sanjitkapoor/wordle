@@ -1,0 +1,124 @@
+<html>
+  <head>
+    <title>Wordle</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Wordle</h1>
+    <br><br>
+    
+    <div class="contain">
+      <div class="inputrow1" id="row1">
+        <label>Attempt 1/6 &emsp;</label>
+        <input type="text" class="inputclass11" id="i11" maxlength="1" />
+        <input type="text" class="inputclass12" id="i12" maxlength="1" />
+        <input type="text" class="inputclass13" id="i13" maxlength="1" />
+        <input type="text" class="inputclass14" id="i14" maxlength="1" />
+        <input type="text" class="inputclass15" id="i15" maxlength="1" />
+        <input type="button" class="inputclass button" onclick="takeInput()" />
+        <div class="output1"></div>
+      </div>
+
+      <div class="inputrow2" id="row2" style="visibility: hidden;">
+        <label>Attempt 2/6 &emsp;</label>
+        <input type="text" class="inputclass21" id="i21" maxlength="1" />
+        <input type="text" class="inputclass22" id="i22" maxlength="1" />
+        <input type="text" class="inputclass23" id="i23" maxlength="1" />
+        <input type="text" class="inputclass24" id="i24" maxlength="1" />
+        <input type="text" class="inputclass25" id="i25" maxlength="1" />
+        <input type="button" class="inputclass button" onclick="takeInput()" />
+        <div class="output2"></div>
+      </div>
+
+      <div class="inputrow3" id="row3" style="visibility: hidden;">
+        <label>Attempt 3/6 &emsp;</label>
+        <input type="text" class="inputclass31" id="i31" maxlength="1" />
+        <input type="text" class="inputclass32" id="i32" maxlength="1" />
+        <input type="text" class="inputclass33" id="i33" maxlength="1" />
+        <input type="text" class="inputclass34" id="i34" maxlength="1" />
+        <input type="text" class="inputclass35" id="i35" maxlength="1" />
+        <input type="button" class="inputclass button" onclick="takeInput()" />
+        <div class="output3"></div>
+      </div>
+
+      <div class="inputrow4" id="row4" style="visibility: hidden;">
+        <label>Attempt 4/6 &emsp;</label>
+        <input type="text" class="inputclass41" id="i41" maxlength="1" />
+        <input type="text" class="inputclass42" id="i42" maxlength="1" />
+        <input type="text" class="inputclass43" id="i43" maxlength="1" />
+        <input type="text" class="inputclass44" id="i44" maxlength="1" />
+        <input type="text" class="inputclass45" id="i45" maxlength="1" />
+        <input type="button" class="inputclass button" onclick="takeInput()" />
+        <div class="output4"></div>
+      </div>
+
+      <div class="inputrow5" id="row5" style="visibility: hidden;">
+        <label>Attempt 5/6 &emsp;</label>
+        <input type="text" class="inputclass51" id="i51" maxlength="1" />
+        <input type="text" class="inputclass52" id="i52" maxlength="1" />
+        <input type="text" class="inputclass53" id="i53" maxlength="1" />
+        <input type="text" class="inputclass54" id="i54" maxlength="1" />
+        <input type="text" class="inputclass55" id="i55" maxlength="1" />
+        <input type="button" class="inputclass button" onclick="takeInput()" />
+        <div class="output5"></div>
+      </div>
+
+      <div class="inputrow6" id="row6" style="visibility: hidden;">
+        <label>Attempt 6/6 &emsp;</label>
+        <input type="text" class="inputclass61" id="i61" maxlength="1" />
+        <input type="text" class="inputclass62" id="i62" maxlength="1" />
+        <input type="text" class="inputclass63" id="i63" maxlength="1" />
+        <input type="text" class="inputclass64" id="i64" maxlength="1" />
+        <input type="text" class="inputclass65" id="i65" maxlength="1" />
+        <input type="button" class="inputclass button" onclick="takeInput()" />
+        <div class="output6"></div>
+      </div>
+    </div>
+  
+
+    <div class="keyboard fixed-bottom">
+      <div class="keyrow d-flex justify-content-center">
+        <input type="text" class="keys" id="key-q" value="Q" disabled />
+        <input type="text" class="keys" id="key-w" value="W" disabled />
+        <input type="text" class="keys" id="key-e" value="E" disabled />
+        <input type="text" class="keys" id="key-r" value="R" disabled />
+        <input type="text" class="keys" id="key-t" value="T" disabled />
+        <input type="text" class="keys" id="key-y" value="Y" disabled />
+        <input type="text" class="keys" id="key-u" value="U" disabled />
+        <input type="text" class="keys" id="key-i" value="I" disabled />
+        <input type="text" class="keys" id="key-o" value="O" disabled />
+        <input type="text" class="keys" id="key-p" value="P" disabled />
+      </div>
+      <div class="keyrow d-flex justify-content-center">
+        <input type="text" class="keys" id="key-a" value="A" disabled />
+        <input type="text" class="keys" id="key-s" value="S" disabled />
+        <input type="text" class="keys" id="key-d" value="D" disabled />
+        <input type="text" class="keys" id="key-f" value="F" disabled />
+        <input type="text" class="keys" id="key-g" value="G" disabled />
+        <input type="text" class="keys" id="key-h" value="H" disabled />
+        <input type="text" class="keys" id="key-j" value="J" disabled />
+        <input type="text" class="keys" id="key-k" value="K" disabled />
+        <input type="text" class="keys" id="key-l" value="L" disabled />
+      </div>
+      <div class="keyrow d-flex justify-content-center">
+        <input type="text" class="keys" id="key-z" value="Z" disabled />
+        <input type="text" class="keys" id="key-x" value="X" disabled />
+        <input type="text" class="keys" id="key-c" value="C" disabled />
+        <input type="text" class="keys" id="key-v" value="V" disabled />
+        <input type="text" class="keys" id="key-b" value="B" disabled />
+        <input type="text" class="keys" id="key-n" value="N" disabled />
+        <input type="text" class="keys" id="key-m" value="M" disabled />
+      </div>
+    </div>
+  </body>
+</html>
